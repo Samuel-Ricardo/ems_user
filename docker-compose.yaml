@@ -21,7 +21,7 @@ services:
     env_file:
       - .env
     volumes:
-      - .docker/postgres:/data/postgres
+      - .docker/user/postgres:/data/postgres
     ports:
       - "5432:5432"
 
