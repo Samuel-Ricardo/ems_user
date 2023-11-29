@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: ${DATABASE_URL_TEST:jdbc:h2:mem:ms_user}
+    username: ${DATABASE_USER_TEST:admin}
+    password: ${DATABASE_PASS_TEST:admin}
