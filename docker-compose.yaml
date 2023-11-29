@@ -4,6 +4,8 @@ services:
 
   user_microsservice:
     build: .
+    depends_on:
+      - user_postgres
     restart: on-failure
     ports:
       - "8080:8080"
@@ -22,3 +24,15 @@ services:
       - .docker/postgres:/data/postgres
     ports:
       - "5432:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    depends_on:
+      - user_postgres
+    env_file:
+      - .env
+    volumes:
+      - .docker/pgadmin:/database/admin/pgadmin
+    ports:
+      - "5050:80"
