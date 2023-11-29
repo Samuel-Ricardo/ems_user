@@ -12,3 +12,13 @@ services:
     env_file:
       - .env
       - .env.test
+
+  user_postgres:
+    image: postgres
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - .docker/postgres:/data/postgres
+    ports:
+      - "5432:5432"
