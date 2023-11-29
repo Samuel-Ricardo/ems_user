@@ -1,0 +1,18 @@
+spring:
+
+  profiles:
+    active: dev
+
+  datasource:
+    url: ${DATABASE_URL:jdbc:h2:mem:ms_user}
+    username: ${POSTGRES_USER:admin}
+    password: ${POSTGRES_PASS:admin}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
