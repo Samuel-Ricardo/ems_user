@@ -18,3 +18,12 @@ spring:
         jdbc:
           lob:
             non_contextual_creation: true
+
+  rabbitmq:
+    addresses:
+      -
+
+broker:
+  queue:
+    email:
+      name: ${EMAIL_BROKER_QUEUE_NAME}
