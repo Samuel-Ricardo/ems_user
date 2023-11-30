@@ -3,9 +3,11 @@ package com.ms.user.domain.dto;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.Builder;
 
 import java.util.UUID;
 
+@Builder
 public record EmailDTO(
         @NotNull
         UUID userId,
