@@ -7,15 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@RestController
 public class UserApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(UserApplication.class, args);
-	}
-
-	@GetMapping("/")
-	public ResponseEntity<String> hello(){
-		return ResponseEntity.ok("{\"message\": \"Hello World\"}");
 	}
 }
