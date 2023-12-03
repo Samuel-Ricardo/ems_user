@@ -6,9 +6,10 @@ import com.ms.user.domain.policy.ProduceOnSaveUserPolicy;
 import com.ms.user.domain.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-@Service
+@Primary @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
