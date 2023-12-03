@@ -15,7 +15,10 @@ public class ProduceOnSaveUserPolicyImpl implements ProduceOnSaveUserPolicy {
     final UserProducer producer;
 
     @Override
-    public void apply(Callable<User> save) throws Exception {
-        producer.publishMessageEmail(save.call());
+    public User apply(Callable<User> save) throws Exception {
+        var user = save.call();
+        producer.publishMessageEmail(user);
+        
+        return user;
     }
 }
