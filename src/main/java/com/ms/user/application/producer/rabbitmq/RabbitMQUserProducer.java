@@ -6,10 +6,11 @@ import com.ms.user.domain.producer.UserProducer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
-@Component
+@Primary @Component
 public class RabbitMQUserProducer implements UserProducer {
 
     final RabbitTemplate rabbit;
