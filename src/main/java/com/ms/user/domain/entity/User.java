@@ -8,7 +8,7 @@ import org.springframework.beans.BeanUtils;
 import java.io.Serializable;
 import java.util.UUID;
 
-@Data
+@Data @Builder
 @Entity @Table(name = "TB_USERS")
 @AllArgsConstructor @NoArgsConstructor
 public class User implements Serializable {
@@ -21,8 +21,10 @@ public class User implements Serializable {
     private String email;
 
     public static User of(UserDTO dto) {
-        var user = new User();
-        BeanUtils.copyProperties(user, dto);
-        return user;
+        return User
+                .builder()
+                .email(dto.email())
+                .name(dto.name())
+                .build();
     }
 }
