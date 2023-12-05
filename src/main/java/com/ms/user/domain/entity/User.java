@@ -1,10 +1,7 @@
 package com.ms.user.domain.entity;
 
 import com.ms.user.domain.dto.UserDTO;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.beans.BeanUtils;
 
@@ -13,12 +10,12 @@ import java.util.UUID;
 
 @Data
 @Entity @Table(name = "TB_USERS")
-@Builder @RequiredArgsConstructor
+@AllArgsConstructor @NoArgsConstructor
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID userId;
     private String name;
     private String email;
