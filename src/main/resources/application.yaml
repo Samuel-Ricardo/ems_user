@@ -1,7 +1,7 @@
 broker:
   queue:
     email:
-      name: ${EMAIL_BROKER_QUEUE_NAME}
+      name: ${EMAIL_BROKER_QUEUE_NAME:default.email}
 
 spring:
 

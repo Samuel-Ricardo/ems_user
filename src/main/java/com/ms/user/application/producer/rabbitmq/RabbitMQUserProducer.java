@@ -18,8 +18,8 @@ public class RabbitMQUserProducer implements UserProducer {
     private RabbitTemplate rabbit;
 
 
-    @Value("${broker.queue.email.name}")
-    private String routingKey;
+    //@Value("${broker.queue.email.name}")
+    private String routingKey = "default.email";
 
     @Override
     public void publishMessageEmail(User user) {
