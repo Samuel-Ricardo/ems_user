@@ -3,19 +3,22 @@ package com.ms.user.application.producer.rabbitmq;
 import com.ms.user.domain.dto.EmailDTO;
 import com.ms.user.domain.entity.User;
 import com.ms.user.domain.producer.UserProducer;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
-@RequiredArgsConstructor
-@Primary @Component
+@Component @Primary
 public class RabbitMQUserProducer implements UserProducer {
 
-    final RabbitTemplate rabbit;
+    @Autowired
+    private RabbitTemplate rabbit;
 
-    @Value(value = "${broker.queue.email.name}")
+
+    @Value("${broker.queue.email.name}")
     private String routingKey;
 
     @Override
