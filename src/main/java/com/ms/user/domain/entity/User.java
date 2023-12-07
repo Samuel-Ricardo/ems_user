@@ -18,6 +18,7 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID userId;
     private String name;
+    @Column(unique = true)
     private String email;
 
     public static User of(UserDTO dto) {
