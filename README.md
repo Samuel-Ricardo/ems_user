@@ -190,6 +190,8 @@ Navigate to project folder and run it using `docker-compose`
   #Apps Running on:
 
   $ USER: http://localhost:8080 - [MICROSERVICE]
+  $ SWAGGER: http://localhost:8080/swagger-ui/index.html - [DOCS]
+
 
   $ PostgreSQL: http://localhost:5432 - [DATABASE] | [USER]
   $ PGAdmin: http://localhost:5050 - [DATABASE] | [VIEW]
