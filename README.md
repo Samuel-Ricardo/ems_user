@@ -9,7 +9,7 @@
 <h4 align="center" >🚀 🟧 Email Microservice 🟧 🚀</h4>
 
 <h4 align="center">
-  User Microservice of an Email Messenger System 
+  User Microservice of an Email Messenger System based on <a href="https://www.youtube.com/@MichelliBrito" target="_blank" >@MichelliBrito</a>'s classes 
 </h4>
 
 <p align="center">
@@ -97,6 +97,8 @@
     Giving an overview, this architecture is divided into User Microservice and Email Microservice, each with its own databases, communication between them occurs through a broker which in this case is based on asynchronous queues managed by RabbitMQ
 </p>
 
+ <br>
+
 <h3> 🕺 | User </h3>
 
   :shipit: | Repository: [ https://github.com/Samuel-Ricardo/ems_user ]
@@ -107,6 +109,8 @@
     The main function of User Microservice is to list and register users in a database. When a user is saved in this MS, it publishes this event to the broker.
   </p>
 
+ <br>
+
 <h3> 📧 | Email </h3>
 
 :shipit: | Repository: [ https://github.com/Samuel-Ricardo/ems_email ]
@@ -116,6 +120,8 @@
   <p>
     The main function of the Email Microservice is to send a welcome email to new users, for this it listens to the broker, when a created user event is published this MS consumes this event and sends an email to this new created user welcoming . 
   </p>
+
+ <br>
 
 <h3> 📮 | Broker </h3>
 
