@@ -97,7 +97,7 @@
     Giving an overview, this architecture is divided into User Microservice and Email Microservice, each with its own databases, communication between them occurs through a broker which in this case is based on asynchronous queues managed by RabbitMQ
 </p>
 
-<h3> User </h3>
+<h3> 🕺 | User </h3>
 
   :shipit: | Repository: [ https://github.com/Samuel-Ricardo/ems_user ]
 
@@ -107,7 +107,7 @@
     The main function of User Microservice is to list and register users in a database. When a user is saved in this MS, it publishes this event to the broker.
   </p>
 
-<h3> Email </h3>
+<h3> 📧 | Email </h3>
 
 :shipit: | Repository: [ https://github.com/Samuel-Ricardo/ems_email ]
 
@@ -116,6 +116,23 @@
   <p>
     The main function of the Email Microservice is to send a welcome email to new users, for this it listens to the broker, when a created user event is published this MS consumes this event and sends an email to this new created user welcoming . 
   </p>
+
+<h3> 📮 | Broker </h3>
+
+<img src="./READEME_FILES/broker.png"/>
+
+<p>
+  The broker is an intermediary between microservices, it receives events and store in a Queue Data Structure that is triggered and can be consumed by other microservices that are waiting for it to react.
+</p>
+
+<h3> 🌱 | Example </h3>
+
+> <img src="./READEME_FILES/demo1.png"/>
+> <img src="./READEME_FILES/demo2.png"/>
+> <img src="./READEME_FILES/demo3.png"/>
+> <img src="./READEME_FILES/demo4.png"/>
+
+
 
 <br>
 
